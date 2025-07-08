@@ -1,0 +1,94 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f4f4f4;
+}
+
+.desktop-nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #333;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+    margin: 1rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .contact-section {
+        flex-direction: column;
+    }
+}
