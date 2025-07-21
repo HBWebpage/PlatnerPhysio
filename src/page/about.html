@@ -7,6 +7,7 @@
   </head>
   <body>
     <div class="desktop">
+        <!--  HEADER -->
       <div class="header" style="position: fixed; z-index: 1200;">
         <div class="nav">
           <img class="physiologo" src="../assets/img/physiologo.png" />
@@ -23,21 +24,64 @@
           </div>
         </div>
       </div>
-
+    <!-- SIDEBAR -->
      <div class="sidebar">
         <div class="sidebar-beige"></div>
         <div class="sidebar-black"></div>
         <div class="sidebar-grey"></div>
      </div>
 
-      <div class="main-content" style="padding-bottom: 31px; padding-top: 133px;">
-        <div class="frame">
-            <img class="istockphoto" src="../assets/img/stockphoto.jpg" />
+     <!-- MAIN CONTENT -->
+      <div class="main-content" style="padding-bottom: 31px; padding-top: 133px; flex-direction: column;">
+
+        <!-- Section 1: Image Left, Text Right -->
+        <div class="content-section image-left">
+          <div class="section-image">
+            <img src="../assets/img/stockphoto.jpg" alt="Physiotherapie Behandlung" />
+          </div>
+          <div class="section-text">
+            <h2>Über mich</h2>
+            <p>Mein Name ist Carina Platner und ich bin ausgebildete Physiotherapeutin mit dem Abschluss Bachelor of Science. Meine Leidenschaft für Bewegung und die Gesundheit meiner Patienten steht im Mittelpunkt meiner Arbeit. Mit individuellen Therapieansätzen helfe ich dabei, Beschwerden zu lindern und die Lebensqualität zu verbessern.</p>
+          </div>
         </div>
-        <div class="physiotherapie-wrapper">
-          <div class="physiotherapie">Physiotherapie <br />Carina Platner, BSc</div>
+
+        <!-- Section 2: Text Left, Image Right -->
+        <div class="content-section image-right">
+          <div class="section-text">
+            <h2>Meine Ausbildung</h2>
+            <p>Ich habe meine Ausbildung zur Physiotherapeutin erfolgreich mit dem Bachelor of Science abgeschlossen. Durch kontinuierliche Weiterbildungen halte ich mein Wissen auf dem neuesten Stand der Wissenschaft und kann so moderne Behandlungsmethoden anbieten, die auf evidenzbasierte Medizin setzen.</p>
+          </div>
+          <div class="section-image">
+            <img src="../assets/img/physiologo.png" alt="Physiotherapie Ausbildung" />
+          </div>
         </div>
+
+        <!-- Section 3: Image Left, Text Right -->
+        <div class="content-section image-left">
+          <div class="section-image">
+            <img src="../assets/img/stockphoto.jpg" alt="Behandlungsmethoden" />
+          </div>
+          <div class="section-text">
+            <h2>Behandlungsphilosophie</h2>
+            <p>Jeder Patient ist einzigartig und verdient eine individuelle Betreuung. In meiner Praxis nehme ich mir die Zeit, die Ursachen Ihrer Beschwerden zu verstehen und gemeinsam mit Ihnen einen Behandlungsplan zu entwickeln, der zu Ihrem Lebensstil und Ihren Zielen passt.</p>
+          </div>
+        </div>
+
+        <!-- Section 4: Text Left, Image Right -->
+        <div class="content-section image-right">
+          <div class="section-text">
+            <h2>Warum Physiotherapie?</h2>
+            <p>Physiotherapie ist weit mehr als nur Behandlung von Schmerzen. Sie hilft dabei, Beweglichkeit zu erhalten, Kraft aufzubauen und präventiv gegen zukünftige Probleme zu wirken. Mein Ziel ist es, Sie dabei zu unterstützen, ein aktives und schmerzfreies Leben zu führen.</p>
+          </div>
+          <div class="section-image">
+            <img src="../assets/img/physiologo.png" alt="Physiotherapie Vorteile" />
+          </div>
+        </div>
+        
       </div>
+
+    <!-- FOOTER  -->
+
       <div class="div" style="padding-left: 20px;">
         <div class="frame-2">
           <div class="div-wrapper"><div class="text-wrapper-2">Physiotherapie</div></div>
@@ -60,6 +104,7 @@
             </div>
           </div>
         </div>
+        
         <div class="frame-5">
           <div class="frame-6"><div class="text-wrapper-2">Kontakt</div></div>
           <form class="kontakt-inputs" action="#" method="POST">
