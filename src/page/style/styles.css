@@ -148,13 +148,17 @@ a {
   margin-top: -1.00px;
   font-family: "Noto Sans-Medium", Helvetica;
   font-weight: 500;
-  color: #000000;
-  font-size: 16px;
+  color: #353535;
+  font-size: 20px;
   text-align: center;
   letter-spacing: -0.08px;
   line-height: 23.2px;
   white-space: nowrap;
   cursor: pointer;
+}
+
+.desktop .text-wrapper:hover {
+  color: #000000;
 }
 
 .desktop .main-content {
@@ -351,24 +355,45 @@ a {
   align-self: stretch;
   width: 100%;
   flex-grow: 1;
-  margin-bottom: -1.00px;
-  margin-left: -1.00px;
-  margin-right: -1.00px;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-left-width: 1px;
-  border-left-style: solid;
-  border-color: #353535;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.desktop .overlap-group {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.desktop .frame-10 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.desktop .frame-11,
+.desktop .frame-12 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.desktop .frame-9 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
 }
 
 .desktop .frame-wrapper {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
-  padding: 0px 20px;
-  position: absolute;
-  top: 153px;
-  right: 0;
+  width: 100%;
 }
 
 .desktop .frame-7 {
@@ -383,7 +408,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
+  padding: 12px 24px;
   position: relative;
   flex: 0 0 auto;
   border-radius: 4px;
@@ -400,34 +425,15 @@ a {
 
 .desktop .text-wrapper-4 {
   position: relative;
-  width: 106px;
   margin-top: -1.00px;
-  font-family: "Noto Sans-Regular", Helvetica;
-  font-weight: 400;
+  font-family: "Noto Sans-Medium", Helvetica;
+  font-weight: 500;
   color: #353535;
-  font-size: 15px;
+  font-size: 16px;
   text-align: center;
   letter-spacing: -0.07px;
   line-height: 26.2px;
-}
-
-.desktop .overlap-group {
-  position: relative;
-  width: 100%;
-  min-height: 146px;
-}
-
-.desktop .frame-9 {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 6px 20px;
-  position: absolute;
-  width: 100%;
-  top: 76px;
-  left: 0;
+  white-space: nowrap;
 }
 
 .desktop .text-wrapper-5 {
@@ -444,41 +450,21 @@ a {
 
 .desktop .nachricht {
   width: 100%;
-  padding: 8px 0;
+  padding: 10px 0;
   border: none;
   border-bottom: 1px solid #353535;
   border-radius: 0;
   background-color: transparent;
   font-family: "Noto Sans-Regular", Helvetica;
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
+  resize: vertical;
+  min-height: 80px;
 }
 
 .desktop .nachricht:focus {
-  border-bottom: 2px solid #353535;
-}
-
-.desktop .frame-10 {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: flex-start;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.desktop .frame-11 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 10px;
-  padding: 20px;
-  position: relative;
-  flex: 1;
-  width: 100%;
+    border: none;
+    border-bottom: 2px solid #353535;
 }
 
 .desktop .text-wrapper-6 {
@@ -488,7 +474,6 @@ a {
   font-weight: 500;
   color: #353535;
   font-size: 15px;
-  text-align: center;
   letter-spacing: -0.07px;
   line-height: 21.8px;
   white-space: nowrap;
@@ -496,30 +481,18 @@ a {
 
 .desktop .name {
   width: 100%;
-  padding: 8px 0;
+  padding: 10px 0;
   border: none;
   border-bottom: 1px solid #353535;
   border-radius: 0;
   background-color: transparent;
   font-family: "Noto Sans-Regular", Helvetica;
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
 }
 
 .desktop .name:focus {
   border-bottom: 2px solid #353535;
-}
-
-.desktop .frame-12 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 10px;
-  padding: 20px;
-  position: relative;
-  flex: 1;
-  width: 100%;
 }
 
 .desktop .e-mail-adresse {
@@ -536,13 +509,13 @@ a {
 
 .desktop .email {
   width: 100%;
-  padding: 8px 0;
+  padding: 10px 0;
   border: none;
   border-bottom: 1px solid #353535;
   border-radius: 0;
   background-color: transparent;
   font-family: "Noto Sans-Regular", Helvetica;
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
 }
 
@@ -552,6 +525,35 @@ a {
 
 .desktop .side-bar {
   display: none;
+}
+
+.desktop .input{
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid #353535;
+}
+
+.desktop .label{
+    font-family: "Noto Sans-Medium", Helvetica;
+    font-weight: 500;
+    color: #353535;
+    font-size: 15px;
+    letter-spacing: -0.07px;
+    line-height: 21.8px;
+    white-space: nowrap;
+}
+
+.desktop .submitButton{
+    width: 50%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary);
+    font-family: "Noto Sans-Regular", Helvetica;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 2%;
 }
 
 /* Mobile and Tablet Responsive Styles */
@@ -637,33 +639,19 @@ a {
   }
   
   .desktop .frame-10 {
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
+    flex-wrap: wrap;
   }
   
   .desktop .frame-11,
   .desktop .frame-12 {
-    padding: 15px;
-    width: 100%;
+    flex: 1;
+    min-width: 200px;
   }
   
   .desktop .frame-wrapper {
-    position: relative;
-    top: auto;
-    right: auto;
-    padding: 20px;
-    justify-content: center;
-  }
-  
-  .desktop .overlap-group {
-    position: relative;
-    min-height: 200px;
-  }
-  
-  .desktop .frame-9 {
-    position: relative;
-    top: auto;
-    padding: 15px;
+    justify-content: end;
     margin-top: 20px;
   }
 }
@@ -706,11 +694,25 @@ a {
   
   .desktop .frame-11,
   .desktop .frame-12 {
-    padding: 10px;
+    flex: 1;
+    min-width: 150px;
   }
   
   .desktop .frame-wrapper {
-    padding: 15px;
+    margin-top: 15px;
+    justify-content: center;
+  }
+}
+
+/* Very small screens - stack form fields */
+@media screen and (max-width: 360px) {
+  .desktop .frame-10 {
+    flex-direction: column;
+  }
+  
+  .desktop .frame-11,
+  .desktop .frame-12 {
+    width: 100%;
   }
 }
 
