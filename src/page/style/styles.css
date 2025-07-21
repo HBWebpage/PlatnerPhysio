@@ -865,3 +865,181 @@ margin-top: 20px;
     gap: 20px;
   }
 }
+
+/* Therapy Table and Treatment Info Styles */
+.therapy-table-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.therapy-table-section h3 {
+  color: #fbfbfe;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.therapy-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fbfbfe;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.therapy-table th {
+  background-color: #c8bdab;
+  color: #050315;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px;
+  text-align: left;
+  border-bottom: 2px solid #9b9b9b;
+}
+
+.therapy-table td {
+  color: #050315;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.therapy-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.therapy-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.treatment-info {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.treatment-info h3 {
+  color: #fbfbfe;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.treatment-content {
+  background-color: #fbfbfe;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.treatment-content h4 {
+  color: #050315;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.treatment-content h4:first-child {
+  margin-top: 0;
+}
+
+.treatment-content p {
+  color: #050315;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist li {
+  color: #050315;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.info-box {
+  background-color: #c8bdab;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 25px;
+}
+
+.info-box h4 {
+  color: #050315;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.info-box ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.info-box li {
+  color: #050315;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/* Mobile responsive styles for therapy section */
+@media screen and (max-width: 768px) {
+  .therapy-table-section,
+  .treatment-info {
+    padding: 0 15px;
+  }
+  
+  .therapy-table {
+    font-size: 12px;
+  }
+  
+  .therapy-table th,
+  .therapy-table td {
+    padding: 10px 8px;
+  }
+  
+  .treatment-content {
+    padding: 20px;
+  }
+  
+  .therapy-table-section h3,
+  .treatment-info h3 {
+    font-size: 20px;
+  }
+  
+  .treatment-content h4 {
+    font-size: 16px;
+  }
+}
