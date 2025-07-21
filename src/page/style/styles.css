@@ -1,94 +1,764 @@
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
 }
-
+html,
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+  margin: 0px;
+  height: 100%;
+  background-color: #c8bdabfe;
 }
 
-header {
+:root{
+    --text: #050315;
+    --background: #fbfbfe;
+    --primary: #c8bdab;
+    --secondary: #363636;
+    --accent: #9b9b9b;
+
+    --displayMobile: none;
+    --displayDesktop: flex;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    color: white;
+    z-index: 1000;
+}
+
+.sidebar-beige{
+    background-color: var(--primary);
+    width: 100%;
+    height: 100px;
+}
+.sidebar-black{
+    background-color: var(--secondary);
+    width: 100%;
+    height: 35%;
+}
+.sidebar-grey{
+    background-color: var(--accent);
+    width: 100%;
+    height: 55%;
+}
+
+.desktop {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  position: relative;
+  background-color: #9b9b9b;
+  overflow-x: hidden;
+}
+
+.desktop .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-top: -1.50px;
+  margin-left: -1.50px;
+  margin-right: -1.50px;
+  background-color: #c8bdabfe;
+  border: 1px solid;
+  height: 101px;
+}
+
+.desktop .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  margin-top: -0.50px;
+  margin-left: -0.50px;
+}
+
+.desktop .physiologo {
+  position: relative;
+  width: 48px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.desktop .mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.desktop .mobile-menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: #353535;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.desktop .mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.desktop .mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.desktop .mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.desktop .navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+}
+
+.desktop .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Noto Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: -0.08px;
+  line-height: 23.2px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.desktop .main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 88px 20px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #353535;
+}
+
+.desktop .frame {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  flex-grow: 1;
+  height: auto;
+  min-height: 300px;
+}
+
+.desktop .istockphoto {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.desktop .physiotherapie-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 415px;
+  height: 500px;
+  margin: 20px auto 0;
+  text-align: center;
+}
+
+.desktop .physiotherapie {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 20px;
+    font-family: "Noto Sans-Regular", Helvetica;
+    font-weight: 400;
+    color: #c8bdabfe;
+    font-size: clamp(24px, 4vw, 40px);
+    text-align: center;
+    letter-spacing: -0.20px;
+    line-height: 1.4;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.desktop .div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+  background-color: #9b9b9b;
+}
+
+.desktop .frame-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 17px 20px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.desktop .div-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Noto Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #353535;
+  font-size: clamp(20px, 3vw, 28px);
+  text-align: center;
+  letter-spacing: -0.14px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.desktop .frame-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.desktop .frame-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+}
+
+.desktop .p {
+  position: relative;
+  width: 100%;
+  font-family: "Noto Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #353535;
+  font-size: 15px;
+  letter-spacing: -0.07px;
+  line-height: 26.2px;
+}
+
+.desktop .span {
+  letter-spacing: -0.01px;
+  text-decoration: underline;
+  color: #353535;
+}
+
+.desktop .text-wrapper-3 {
+  letter-spacing: -0.01px;
+  color: #000000;
+}
+
+.desktop .image {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  margin-top: 20px;
+}
+
+.desktop .image iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border: 0;
+}
+
+.desktop .frame-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 17px 20px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.desktop .frame-6 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .kontakt-inputs {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+  margin-bottom: -1.00px;
+  margin-left: -1.00px;
+  margin-right: -1.00px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-color: #353535;
+}
+
+.desktop .frame-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 20px;
+  position: absolute;
+  top: 153px;
+  right: 0;
+}
+
+.desktop .frame-7 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .frame-8 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: #353535;
+  background-color: #c8bdabfe;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.desktop .frame-8:hover {
+  background-color: #b8ad9a;
+}
+
+.desktop .text-wrapper-4 {
+  position: relative;
+  width: 106px;
+  margin-top: -1.00px;
+  font-family: "Noto Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #353535;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: -0.07px;
+  line-height: 26.2px;
+}
+
+.desktop .overlap-group {
+  position: relative;
+  width: 100%;
+  min-height: 146px;
+}
+
+.desktop .frame-9 {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 20px;
+  position: absolute;
+  width: 100%;
+  top: 76px;
+  left: 0;
+}
+
+.desktop .text-wrapper-5 {
+  position: relative;
+  width: auto;
+  margin-top: -1.00px;
+  font-family: "Noto Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #353535;
+  font-size: 15px;
+  letter-spacing: -0.07px;
+  line-height: 21.8px;
+}
+
+.desktop .nachricht {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #353535;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: "Noto Sans-Regular", Helvetica;
+  font-size: 14px;
+  outline: none;
+}
+
+.desktop .nachricht:focus {
+  border-bottom: 2px solid #353535;
+}
+
+.desktop .frame-10 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.desktop .frame-11 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 20px;
+  position: relative;
+  flex: 1;
+  width: 100%;
+}
+
+.desktop .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  font-family: "Noto Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #353535;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: -0.07px;
+  line-height: 21.8px;
+  white-space: nowrap;
+}
+
+.desktop .name {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #353535;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: "Noto Sans-Regular", Helvetica;
+  font-size: 14px;
+  outline: none;
+}
+
+.desktop .name:focus {
+  border-bottom: 2px solid #353535;
+}
+
+.desktop .frame-12 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 20px;
+  position: relative;
+  flex: 1;
+  width: 100%;
+}
+
+.desktop .e-mail-adresse {
+  position: relative;
+  width: fit-content;
+  font-family: "Noto Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #353535;
+  font-size: 15px;
+  letter-spacing: -0.07px;
+  line-height: 21.8px;
+  white-space: nowrap;
+}
+
+.desktop .email {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #353535;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: "Noto Sans-Regular", Helvetica;
+  font-size: 14px;
+  outline: none;
+}
+
+.desktop .email:focus {
+  border-bottom: 2px solid #353535;
+}
+
+.desktop .side-bar {
+  display: none;
+}
+
+/* Mobile and Tablet Responsive Styles */
+@media screen and (max-width: 768px) {
+  .desktop .header {
+    padding: 16px 20px;
+  }
+  
+  .desktop .nav {
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background: #f4f4f4;
-}
-
-.desktop-nav a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #333;
-}
-
-.mobile-menu {
+  }
+  
+  .desktop .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .desktop .navbar {
     display: none;
-    font-size: 1.5rem;
-}
-
-.hero {
-    text-align: center;
-    padding: 2rem;
-}
-
-.hero img {
-    max-width: 100%;
-    height: auto;
-}
-
-.contact-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem;
-    flex-wrap: wrap;
-}
-
-.contact-info, .contact-form {
-    flex: 1;
-    min-width: 300px;
-    margin: 1rem;
-}
-
-.contact-form form {
-    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #c8bdabfe;
     flex-direction: column;
-}
-
-.contact-form input,
-.contact-form textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    padding: 0.5rem;
-    font-size: 1rem;
-    background: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.map-image {
+    gap: 0;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .desktop .navbar.active {
+    display: flex;
+  }
+  
+  .desktop .text-wrapper {
+    font-size: 16px;
+    padding: 10px 0;
     width: 100%;
-    height: auto;
-    margin-top: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(53, 53, 53, 0.1);
+  }
+  
+  .desktop .text-wrapper:last-child {
+    border-bottom: none;
+  }
+  
+  .desktop .main-content {
+    padding: 60px 15px 40px;
+  }
+  
+  .desktop .physiotherapie {
+    font-size: clamp(20px, 5vw, 32px);
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .desktop .div {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  
+  .desktop .frame-2,
+  .desktop .frame-5 {
+    padding: 20px 15px;
+  }
+  
+  .desktop .frame-3 {
+    gap: 30px;
+  }
+  
+  .desktop .frame-4 {
+    padding: 15px;
+  }
+  
+  .desktop .image iframe {
+    min-height: 250px;
+  }
+  
+  .desktop .frame-10 {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .desktop .frame-11,
+  .desktop .frame-12 {
+    padding: 15px;
+    width: 100%;
+  }
+  
+  .desktop .frame-wrapper {
+    position: relative;
+    top: auto;
+    right: auto;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .desktop .overlap-group {
+    position: relative;
+    min-height: 200px;
+  }
+  
+  .desktop .frame-9 {
+    position: relative;
+    top: auto;
+    padding: 15px;
+    margin-top: 20px;
+  }
 }
 
-@media (max-width: 768px) {
-    .desktop-nav {
-        display: none;
-    }
+@media screen and (max-width: 480px) {
+  .desktop .header {
+    padding: 12px 15px;
+  }
+  
+  .desktop .navbar {
+    gap: 10px;
+  }
+  
+  .desktop .text-wrapper {
+    font-size: 13px;
+    padding: 5px;
+  }
+  
+  .desktop .main-content {
+    padding: 50px 10px 30px;
+  }
+  
+  .desktop .physiotherapie {
+    font-size: clamp(18px, 6vw, 28px);
+    padding: 10px;
+  }
+  
+  .desktop .frame-2,
+  .desktop .frame-5 {
+    padding: 15px 10px;
+  }
+  
+  .desktop .frame-4 {
+    padding: 10px;
+  }
+  
+  .desktop .image iframe {
+    min-height: 200px;
+  }
+  
+  .desktop .frame-11,
+  .desktop .frame-12 {
+    padding: 10px;
+  }
+  
+  .desktop .frame-wrapper {
+    padding: 15px;
+  }
+}
 
-    .mobile-menu {
-        display: block;
-    }
-
-    .contact-section {
-        flex-direction: column;
-    }
+/* Larger screens */
+@media screen and (min-width: 1200px) {
+  .desktop .main-content {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 88px 60px;
+  }
+  
+  .desktop .frame {
+    flex: 1;
+    margin-right: 40px;
+  }
+  
+  .desktop .physiotherapie-wrapper {
+    flex: 1;
+    max-width: none;
+    margin: 0;
+  }
+  
+  .desktop .div {
+    flex-direction: row;
+  }
+  
+  .desktop .frame-2,
+  .desktop .frame-5 {
+    flex: 1;
+  }
+  
+  .desktop .frame-3 {
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  .desktop .frame-4 {
+    flex: 1;
+  }
+  
+  .desktop .image {
+    flex: 1;
+    margin-top: 0;
+    margin-left: 20px;
+  }
+  
+  .desktop .frame-10 {
+    flex-direction: row;
+    gap: 20px;
+  }
 }
