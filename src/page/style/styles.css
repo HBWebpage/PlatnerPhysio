@@ -1055,6 +1055,105 @@ margin-top: 20px;
   }
 }
 
+/* Impressum Page Styles */
+.impressum-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fbfbfe;
+}
+
+.impressum-content h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fbfbfe;
+}
+
+.impressum-section {
+  margin-bottom: 40px;
+  background-color: rgba(251, 251, 254, 0.1);
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #c8bdab;
+}
+
+.impressum-section h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #c8bdab;
+  border-bottom: 2px solid #c8bdab;
+  padding-bottom: 10px;
+}
+
+.impressum-section p {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #fbfbfe;
+}
+
+.impressum-section p:last-child {
+  margin-bottom: 0;
+}
+
+.impressum-section strong {
+  color: #c8bdab;
+  font-weight: 600;
+}
+
+.impressum-section a {
+  color: #c8bdab;
+  text-decoration: underline;
+}
+
+.impressum-section a:hover {
+  color: #fbfbfe;
+}
+
+.contact-info p,
+.authority-info p,
+.disclaimer-content p,
+.copyright-content p {
+  padding-left: 10px;
+}
+
+/* Mobile responsive styles for impressum */
+@media screen and (max-width: 768px) {
+  .impressum-content {
+    padding: 0 15px;
+  }
+  
+  .impressum-content h1 {
+    font-size: 24px;
+  }
+  
+  .impressum-section {
+    padding: 20px 15px;
+  }
+  
+  .impressum-section h2 {
+    font-size: 18px;
+  }
+  
+  .impressum-section p {
+    font-size: 13px;
+  }
+  
+  .contact-info p,
+  .authority-info p,
+  .disclaimer-content p,
+  .copyright-content p {
+    padding-left: 5px;
+  }
+}
+
 strong {
   font-weight: bolder;
 }
