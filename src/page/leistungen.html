@@ -153,7 +153,7 @@
         
         <div class="frame-5">
           <div class="frame-6"><div class="text-wrapper-2">Kontakt</div></div>
-          <form class="kontakt-inputs" action="#" method="POST">
+          <form class="kontakt-inputs" method="POST" onsubmit="return handleFormSubmit(event)">
             <!-- First Row: Name and Email -->
             <div class="frame-10">
                 <div class="frame-11">
@@ -161,7 +161,7 @@
                 <input class="name" type="text" id="name" name="name" required />
                 </div>
                 <div class="frame-12">
-                <label class="label" for="email">E-mail Adresse</label>
+                <label class="label" for="email">E-Mail Adresse</label>
                 <input class="email" type="email" id="email" name="email" required />
                 </div>
             </div>
@@ -173,8 +173,11 @@
             </div>
             
             <!-- Third Row: Submit Button -->
-            <div class="frame-wrapper">
-                <button class="submitButton" type="submit">Abschicken</button>
+            <div class="frame-wrapper" style="display: flex; flex-direction: row; align-items: center;">
+              <p class="p">              
+                <span class="text-wrapper-3">Durch Ihren Klick auf "Senden" willigen Sie der weiteren Verarbeitung Ihrer angegebenen Daten zum Zweck der Kontaktaufnahme ein.</span>
+              </p>
+              <button class="submitButton" type="submit">Senden</button>
             </div>
             </form>
         </div>
@@ -208,6 +211,48 @@
           }
         });
       });
+
+      // Function to handle form submission and create mailto link
+      function handleFormSubmit(event) {
+        // Prevent default form submission
+        event.preventDefault();
+        
+        // Get form field values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('nachricht').value.trim();
+        
+        // Validate that all fields are filled
+        if (!name || !email || !message) {
+          alert('Bitte füllen Sie alle Felder aus.');
+          return false;
+        }
+        
+        // Create email subject and body
+        const subject = encodeURIComponent(`Kontaktanfrage von ${name}`);
+        const emailBody = encodeURIComponent(
+          `Hallo,\n\n` +
+          `ich möchte gerne Kontakt aufnehmen.\n\n` +
+          `Name: ${name}\n` +
+          `E-Mail: ${email}\n\n` +
+          `Nachricht:\n${message}\n\n` +
+          `Mit freundlichen Grüßen,\n${name}`
+        );
+        
+        // Create mailto link
+        const mailtoLink = `mailto:physiotherapie.platner@gmx.at?subject=${subject}&body=${emailBody}`;
+        
+        // Open email client with prefilled email
+        window.location.href = mailtoLink;
+        
+        // Clear form after successful submission
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('nachricht').value = '';
+        
+        // Return false to prevent default form submission
+        return false;
+      }
     </script>
   </body>
 </html>
