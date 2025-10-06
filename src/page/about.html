@@ -31,9 +31,6 @@
 
         <!-- Section 1: Image Left, Text Right -->
         <div class="content-section image-left">
-          <div class="section-image">
-            <img src="../assets/img/Physio/Über mich/54 - _DSC9723.jpg" alt="Physiotherapie Behandlung" />
-          </div>
           <div class="section-text">
             <h2>Ausbildung und Zusatzausbildungen</h2>
             <p style="text-align: left;">2015-2018: Studium Physiotherapie an der FH Steyr<br />
@@ -74,16 +71,10 @@
               <br /><strong>Kopfschmerz- und Schwindeltherapie</strong><br />
               Physiotherapie kann bei verschiedenen Formen von Kopfschmerzen und Schwindelbeschwerden gezielt helfen. Insbesondere, wenn muskuläre Verspannungen, Fehlhaltungen oder Funktionsstörungen der Halswirbelsäule eine Rolle spielen. Durch manuelle Techniken, Haltungs- und Bewegungsschulung sowie spezielle Übungen wird an der Ursache behandelt und versucht die Beschwerden nachhaltig zu reduzieren. Typische Indikationen sind z. B. Spannungskopfschmerz, cervikogener Schwindel, Migräne mit muskulären Auslösern oder Schwindel nach Gleichgewichtsstörungen.</p>
           </div>
-          <div class="section-image">
-            <img src="../assets/img/Physio/Über mich/41 - _DSC9688.jpg" alt="Physiotherapie Ausbildung" />
-          </div>
         </div>
 
         <!-- Section 3: Image Left, Text Right -->
         <div class="content-section image-left">
-          <div class="section-image">
-            <img src="../assets/img/Physio/Über mich/LWS.jpg" alt="Behandlungsmethoden" />
-          </div>
           <div class="section-text">
             <h2>Behandlungsphilosophie</h2>
             <p style="text-align: left;">
@@ -94,6 +85,57 @@
             </p>
           </div>
         </div>        
+      </div>
+
+      <!-- CAROUSEL SECTION -->
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <h2 class="carousel-title">Einblicke in meine Praxis</h2>
+          <div class="carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide active">
+                <img src="../assets/img/Physio/Über mich/41 - _DSC9688.jpg" alt="Physiotherapie Behandlung" class="carousel-image-only" />
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/img/Physio/Über mich/46 - _DSC9700.jpg" alt="Physiotherapie Praxis" class="carousel-image-only" />
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/img/Physio/Über mich/49 - _DSC9708.jpg" alt="Behandlungsmethoden" class="carousel-image-only" />
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/img/Physio/Über mich/54 - _DSC9723.jpg" alt="Therapie" class="carousel-image-only" />
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/img/Physio/Über mich/77 - _DSC9784.jpg" alt="Therapie" class="carousel-image-only" />
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/img/Physio/Über mich/61 - _DSC9744.jpg" alt="Therapie" class="carousel-image-only" />
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/img/Physio/Über mich/62 - _DSC9745.jpg" alt="Therapie" class="carousel-image-only" />
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/img/Physio/Über mich/LWS.jpg" alt="LWS Behandlung" class="carousel-image-only" />
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/img/Physio/Über mich/Tape.jpg" alt="Tape Therapie" class="carousel-image-only" />
+              </div>
+            </div>
+            <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <div class="carousel-dots">
+              <span class="dot active" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+              <span class="dot" onclick="currentSlide(5)"></span>
+              <span class="dot" onclick="currentSlide(6)"></span>
+              <span class="dot" onclick="currentSlide(7)"></span>
+              <span class="dot" onclick="currentSlide(8)"></span>
+              <span class="dot" onclick="currentSlide(9)"></span>
+            </div>
+          </div>
+        </div>
       </div>
 
     <!-- FOOTER  -->
@@ -223,6 +265,66 @@
         // Return false to prevent default form submission
         return false;
       }
+
+      // Carousel functionality
+      let currentSlideIndex = 0;
+      let autoPlayTimer;
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.dot');
+
+      function showSlide(index) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Add active class to current slide and dot
+        if (slides[index]) {
+          slides[index].classList.add('active');
+          dots[index].classList.add('active');
+        }
+        
+        currentSlideIndex = index;
+      }
+
+      function resetAutoPlayTimer() {
+        // Clear existing timer
+        if (autoPlayTimer) {
+          clearInterval(autoPlayTimer);
+        }
+        // Start new timer
+        autoPlayTimer = setInterval(autoPlay, 5000);
+      }
+
+      function moveSlide(direction) {
+        let newIndex = currentSlideIndex + direction;
+        
+        if (newIndex >= slides.length) {
+          newIndex = 0;
+        } else if (newIndex < 0) {
+          newIndex = slides.length - 1;
+        }
+        
+        showSlide(newIndex);
+        // Reset timer when manually navigating
+        resetAutoPlayTimer();
+      }
+
+      function currentSlide(index) {
+        showSlide(index - 1);
+        // Reset timer when manually navigating via dots
+        resetAutoPlayTimer();
+      }
+
+      // Auto-play carousel
+      function autoPlay() {
+        moveSlide(1);
+      }
+
+      // Initialize carousel when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        // Start auto-play timer (5 seconds)
+        resetAutoPlayTimer();
+      });
     </script>
   </body>
 </html>
