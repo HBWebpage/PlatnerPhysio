@@ -3,13 +3,14 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="./style/styles.css" />
+    <link rel="stylesheet" href="./src/page/style/styles.css" />
   </head>
   <body>
     <div class="desktop">
+        <!--  HEADER -->
       <div class="header" style="position: fixed; z-index: 1200;">
         <div class="nav">
-          <img class="physiologo" src="../assets/img/physiologo.png" />
+          <a href="./index.html"><img class="physiologo" src="./src/assets/img/physiologo.png" /></a>
           <button class="mobile-menu-toggle" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -25,14 +26,102 @@
         </div>
       </div>
 
-      <div class="main-content" style="padding-bottom: 31px; padding-top: 133px;">
-        <div class="frame">
-            <img class="istockphoto" src="../assets/img/Physio/Startseite.jpg" />
-        </div>
-        <div class="physiotherapie-wrapper">
-          <div class="physiotherapie">Physiotherapie <br />Carina Platner</div>
-        </div>
+     <!-- MAIN CONTENT -->
+      <div class="main-content" style="padding-bottom: 31px; padding-top: 133px; flex-direction: column;">
+          
+          <!-- Therapy Duration and Prices Table -->
+          <div class="therapy-table-section">
+            <h2>Tarife</h2>
+            <h3>Ambulante Physiotherapie</h3>
+            <table class="therapy-table">
+                <thead>
+                    <tr>
+                        <th>Therapiedauer</th>
+                        <th>Preis (€)</th>
+                        <th>Rückerstattung ÖGK</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>30 Minuten</td>
+                        <td>55€</td>
+                        <td>30,40€</td>
+                    </tr>
+                    <tr>
+                        <td>45 Minuten</td>
+                        <td>80€</td>
+                        <td>45,62€</td>
+                    </tr>
+                    <tr>
+                        <td>60 Minuten</td>
+                        <td>100€</td>
+                        <td>60,82€</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+
+          <div class="therapy-table-section">
+            <h3>Mobile Physiotherapie</h3>
+              <table class="therapy-table">
+                  <thead>
+                      <tr>
+                          <th>Therapiedauer</th>
+                          <th>Preis (€)</th>
+                          <th>Rückerstattung ÖGK</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>45 Minuten</td>
+                          <td>105€</td>
+                          <td>76,02€</td>
+                      </tr>
+                      <tr>
+                          <td>60 Minuten</td>
+                          <td>130€</td>
+                          <td>91,22€</td>
+                      </tr>
+                      <tr>
+                          <td>Kilometergeld</td>
+                          <td>0,50€ pro km</td>
+                          <td>0,40€ pro km</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <!-- Treatment Information -->
+          <div class="treatment-info">
+              <h3>Terminvereinbarung</h3>
+              <div class="treatment-content">
+                  <p>Für eine Terminvereinbarung kontaktieren Sie mich unter der Nummer 0681/10 44 67 70 oder per Email <a href="mailto:physiotherapie.platner@gmx.at">physiotherapie.platner@gmx.at</a><br /><br />
+                    Hinterlassen Sie mir gerne eine Nachricht mit Ihrem Anliegen, Namen und Telefonnummer auf meiner Mailbox, ich rufe Sie im Laufe des Tages zurück.
+                  </p>
+                  <h4>Bitte bringen Sie zum ersten Termin folgendes mit</h4>
+                  <ul class="checklist">
+                      <li>📋 Gültige Überweisung Ihres Arztes mit Diagnose und Dauer der Behandlung</li>
+                      <li>🩺 Medizinische Befunde wie MR, Röntgen, CT,.. (falls vorhanden)</li>
+                      <li>🏖️ 1 großes Badehandtuch</li>
+                      <li>👕 Bequeme Kleidung</li>
+                      <li>📝 Liste Ihrer aktuellen Medikamente (falls vorhanden und relevant)</li>
+                  </ul>
+                  
+                  <div class="info-box">
+                      <h4>Wichtige Hinweise:</h4>
+                      <ul>
+                          <li>Bitte erscheinen Sie pünktlich zu Ihrem Termin</li>
+                          <li>Die Bezahlung erfolgt nach jeder Einheit in <strong>Bar oder per Karte</strong>, sofern nichts anderes vereinbart wurde.</li>
+                          <li><strong>Termine die nicht wahrgenommen werden können, müssen mindestens 24 Stunden vorher abgesagt werden. Ansonsten wird der Termin zu 100% in Rechnung gestellt. Eine Rückerstattung von Ihrer Krankenkasse ist in diesem Fall nicht möglich</strong></li>
+                          <li>Angaben zur Rückerstattung und zum Selbstbehalt sind laut Stand ÖGK 2025 und ohne Gewähr. Diese können je nach Krankenkasse variieren. Bitte fragen Sie bei Ihrer zuständigen Krankenkassen bevor Sie die Therapie starten.</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          
       </div>
+
+    <!-- FOOTER  -->
+
       <div class="div" style="padding-left: 20px;">
         <div class="frame-2">
           <div class="div-wrapper"><div class="text-wrapper-2">Physiotherapie</div></div>
@@ -55,6 +144,7 @@
             </div>
           </div>
         </div>
+        
         <div class="frame-5">
           <div class="frame-6"><div class="text-wrapper-2">Kontakt</div></div>
           <form class="kontakt-inputs" method="POST" onsubmit="return handleFormSubmit(event)">
