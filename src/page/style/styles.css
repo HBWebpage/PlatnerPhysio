@@ -1157,3 +1157,26 @@ margin-top: 20px;
 strong {
   font-weight: bolder;
 }
+
+@media screen and (max-width: 768px) {
+  :root{
+    --displayMobile: flex;
+    --displayDesktop: none;
+  }
+
+  .image-left{
+    flex-direction: column !important;
+    padding: 15px 3px;
+    gap: 20px;
+  }
+
+  .image-right{
+    flex-direction: column-reverse !important;
+    padding: 15px 3px;
+    gap: 20px;
+  }
+  
+  .content-section.section-image {
+    max-width: 100%;
+  }
+}
